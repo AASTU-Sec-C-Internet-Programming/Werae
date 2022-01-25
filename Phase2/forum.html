@@ -14,6 +14,10 @@
             padding: 0;
         }
         
+        body {
+            background-color: rgb(226, 226, 226);
+        }
+        
         .header {
             display: flex;
             justify-content: space-between;
@@ -70,17 +74,18 @@
             font-family: 'Courier New', Courier, monospace;
         }
         
-        .btn.signin:hover {
+        .btn-signin:hover {
             background-color: rgb(0, 71, 164);
             transform: scale(1.3);
         }
         
         .header2 {
+            display: flex;
             position: sticky;
+            justify-content: center;
             top: 0;
             width: 100%;
-            background-color: #D7E9FE;
-            display: block;
+            background-color: white;
             overflow: hidden;
         }
         
@@ -88,99 +93,73 @@
             display: flex;
         }
         
-        .sidebar {
-            position: sticky;
-            top: 43vh;
-            height: 100vh;
-            flex-basis: 40%;
-            align-items: center;
-        }
-        
-        .qa-section {
-            flex-basis: 60%;
-            /* margin: 10px 20%; */
-            display: grid;
-            grid-template-rows: auto;
-        }
-        
         .sidebar ul {
-            width: 50%;
+            width: 30%;
             margin: auto;
         }
         
         .qa-nav {
-            margin: auto;
-            width: 50%;
-            height: 100%;
             list-style-type: none;
             display: flex;
-            align-items: center;
-            justify-content: ;
-            margin: 0px auto;
         }
         
         .qa-nav li {
             text-align: center;
-            padding: 10px;
-            flex-basis: 80%;
+            padding: 10px 20px;
             /* border: 1px solid red; */
         }
         
-        .qa-nav li a {
-            color: #24252A;
-            text-decoration: none;
-            text-transform: capitalize;
-            font-family: 'Times New Roman', Times;
-            transition: all 0.5s;
+        .qa-nav li a img {
+            width: 35px;
+            height: 35px;
+            background-size: cover;
         }
         
-        .qa-nav li:hover,
-        .qa-nav li a:hover:not(.except) {
+        .qa-nav .qa-home:hover,
+        .qa-nav .qa-answer:hover,
+        .qa-account:hover {
             background-color: rgba(0, 136, 169, 1);
             color: #D7E9FE;
         }
         
         .btn-addq {
-            background-color: #0645A4;
+            background-color: rgb(255, 70, 70);
+            color: white;
             padding: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 900;
             border-radius: 20px;
             border: none;
+        }
+        
+        .btn-addq a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-addq:hover {
+            background-color: #bd3333;
         }
         
         .qa-home {
             position: relative;
         }
         
-        .qa-home::before {
-            position: absolute;
-            content: "";
-            top: -50%;
-            left: 50%;
-            height: 15px;
-            width: 15px;
-            background-image: url(res/home.png);
-            background-size: cover;
-            border: 3px solid red;
-            z-index: -1;
-        }
-        
         .qa-home:hover a {
             color: rgba(0, 136, 169, 1);
         }
         
-        .qa-home::before:hover {
-            transform: translateY(50px);
-            z-index: 1;
-        }
-        
-        .question {
-            border: 2px solid black;
-            margin-bottom: 30px;
-            padding: 30px;
-        }
-        
         .searchbar {
             display: flex;
+        }
+        
+        .searchbar input {
+            align-self: center;
+            height: 30px;
+        }
+        
+        .searchbar input:focus {
+            background-color: #D7E9FE;
         }
         
         .search-icon {
@@ -195,10 +174,97 @@
         
         .search-div {
             background-color: white;
-            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
+        /* Question and answer section */
+        
+        .sidebar {
+            position: sticky;
+            top: 20%;
+            height: 100vh;
+            flex-basis: 25%;
+            align-items: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(226, 226, 226);
         }
         
-        .side
+        .qa-section {
+            flex-basis: 50%;
+            display: grid;
+            padding-top: 2%;
+            grid-template-rows: auto;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(226, 226, 226);
+        }
+        
+        .question {
+            background-color: white;
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            /* border: 2px solid black; */
+            margin-bottom: 30px;
+            padding: 30px;
+            font-size: 15px;
+        }
+        /* Account section */
+        
+        .question .account-div {
+            flex-basis: 100%;
+            padding-bottom: 5px;
+        }
+        
+        .question .account-div .account-info {}
+        
+        .question .account-div .profile-picture {
+            float: left;
+            padding-right: 3px;
+        }
+        
+        .question .account-div .account-info .account-name {
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .question .account-div .account-info .account-name:hover {
+            text-decoration: underline;
+        }
+        
+        .question .account-div .account-info .self-desc {
+            font-size: 13px;
+            color: #929292;
+        }
+        
+        .question .account-div .profile-picture img {
+            background-size: cover;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            /* border: 1px solid black; */
+        }
+        /* question content */
+        
+        .question-div {
+            flex-basis: 100%;
+        }
+        
+        .question-div .question-title {
+            margin-bottom: 10px;
+        }
+        
+        .question-div .question-title p {
+            font-size: 18px;
+            font-weight: 900;
+        }
+        
+        .question-div .question-content {}
+        
+        .question-div .question-content p {
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -222,15 +288,21 @@
     </header>
     <div class="header2">
         <ul class="qa-nav">
-            <li class="qa-home"><a href=""> Home</a></li>
-            <li><a href="qa-answer"> Answer</a></li>
-            <li class="searchbar"><input type="text" placeholder="">
+            <li class="qa-home">
+                <a href=""><img src="res/home.png" alt="home"></a>
+            </li>
+            <li class="qa-answer">
+                <a href=""><img src="res/edit.png" alt="answer"></a>
+            </li>
+            <li class="searchbar"><input type="text" placeholder="search Werae">
                 <div class="search-div">
                     <img src="res/search.png" alt="" class="search-icon">
                 </div>
             </li>
             <li><button class="btn-addq"><a href="" class="except"> Add Question</a></button></li>
-            <li class="qa-account"><a href=""> Account</a></li>
+            <li class="qa-account">
+                <a href=""> <img src="res/account.png" alt=""></a>
+            </li>
         </ul>
     </div>
     <div class="main-container">
@@ -246,54 +318,134 @@
                 <h4>Questions for you</h4>
             </div>
             <div class="question">
-                <div class="accname">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/gift-habeshaw-h_T9h4IrifE-unsplash.jpg" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Gifti Tadesse </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>3rd Year Software Engineering </p>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <h3 class="title">Can I add classes after add drop?</h3>
-                </div>
-                <div>
-                    <p>I have been wondering if it is possible to add classes after add and drop case day</p>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="question">
-                <div class="accname">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/aben-tefra-jmddu0RBwIY-unsplash.jpg" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Aben Tefera </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>5rd Year Environmental Engineering </p>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <h3 class="title">Can I add classes after add drop?</h3>
-                </div>
-                <div>
-                    <p>I have been wondering if it is possible to add classes after add and drop case day</p>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+                    </div>
                 </div>
             </div>
             <!--  -->
             <div class="question">
-                <div class="accname">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Yohannes Kassa </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>3rd Year Software Engineering </p>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <h3 class="title">Can I add classes after add drop?</h3>
-                </div>
-                <div>
-                    <p>I have been wondering if it is possible to add classes after add and drop case day</p>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="question">
-                <div class="accname">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Yohannes Kassa </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>3rd Year Software Engineering </p>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <h3 class="title">Can I add classes after add drop?</h3>
-                </div>
-                <div>
-                    <p>I have been wondering if it is possible to add classes after add and drop case day</p>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="question">
-                <div class="accname">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Yohannes Kassa </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>3rd Year Software Engineering </p>
+                        </div>
+                    </div>
+
                 </div>
-                <div>
-                    <h3 class="title">Can I add classes after add drop?</h3>
-                </div>
-                <div>
-                    <p>I have been wondering if it is possible to add classes after add and drop case day</p>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="question">

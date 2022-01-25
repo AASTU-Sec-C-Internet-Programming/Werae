@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy and Sell</title>
+
+    <style>
+        html {
+            font-size: 100%;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            position: relative;
+            background-color: rgb(226, 226, 226);
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            height: 15vh;
+            /* background-color: #11101D; */
+            background-image: linear-gradient(#24252A, #24252A);
+            padding: 30px 10%;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo-box {
+            float: right;
+        }
+        
+        .logo {
+            height: 64px;
+            background-size: cover;
+        }
+        
+        .logo:hover {
+            transform: scale(1.2);
+        }
+        
+        .navlinks {
+            list-style-type: none;
+        }
+        
+        .navlinks li {
+            display: inline-block;
+            padding: 0px 30px;
+        }
+        
+        .navs {
+            text-decoration: none;
+            color: #edf0f1;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            transition: all 0.3s ease 0s;
+        }
+        
+        .navs:hover {
+            border-bottom: 2px solid rgb(255, 255, 255);
+            color: rgb(60, 153, 220);
+        }
+        
+        .btn-signin {
+            padding: 9px 25px;
+            background-color: rgba(0, 136, 169, 1);
+            color: #edf0f1;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        .btn-signin:hover {
+            background-color: rgb(0, 71, 164);
+            transform: scale(1.3);
+        }
+        
+        .bs-body {
+            position: sticky;
+            top: 0;
+        }
+        
+        .bs-header {
+            display: flex;
+            border: 1px solid black;
+            flex-wrap: wrap;
+        }
+        
+        .bs-sidebar {
+            flex-basis: 18%;
+            min-width: 18%;
+            min-height: 100vh;
+            background-image: linear-gradient(#24252A, #24252A);
+            color: white;
+            /* border: 1px solid black; */
+            float: left;
+        }
+        
+        .bs-logodiv {
+            height: 2.7rem;
+            background-color: white;
+            color: black;
+            display: flex;
+            /* border: 2px solid black; */
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bs-sidebar-logoname {
+            font-size: 1.5rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: 600;
+        }
+        
+        .bs-sidebar-logo {}
+        
+        .bs-sidebar-logo img {
+            height: 40px;
+            width: 40px;
+            float: right;
+        }
+        
+        .bs-sidebar-navs {
+            /* padding-left: 20%; */
+            letter-spacing: 1px;
+            padding-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        .bs-sidebar-navs .bs-main-nav {
+            list-style: none;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        .nav-sortby span {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .bs-main-nav li {
+            margin: 5px 0px;
+        }
+        
+        .bs-main-nav li select {
+            width: 100%;
+            height: 2rem;
+        }
+        
+        .nav-cat span {
+            list-style: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .catlist {
+            list-style: none;
+        }
+        
+        .catlist li {
+            border: 1px solid black;
+            position: relative;
+            padding: 5px;
+        }
+        
+        .catlist li:hover {
+            background-color: #edf0f1;
+            color: #11101D;
+            border-radius: 30px;
+        }
+        
+        .catlist li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50px;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .bs-topbar {
+            display: flex;
+            background-color: white;
+            height: 2.7rem;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid black; */
+        }
+        
+        .bs-topbar .bs-searchbar input {
+            height: 2.5rem;
+            width: 20rem;
+            margin-right: 1.2rem;
+        }
+        
+        .bs-topbar .bs-search-icon button {
+            height: 2.5rem;
+            width: 5rem;
+            background-color: #24252A;
+            color: white;
+            border: none;
+        }
+        
+        .bs-search-icon button:hover {
+            background-color: #24252ace;
+            transform: scale(1.1);
+        }
+        
+        .bs-content {
+            margin-left: 17rem;
+            /* border: 1px solid red; */
+            padding: 2rem 3rem 0rem 3rem;
+        }
+        
+        .bs-content .item {
+            background-color: #24252A;
+            display: flex;
+            border: 1px solid black;
+        }
+        
+        .item .item-info {
+            flex-basis: 80%;
+            margin: 1rem;
+        }
+        
+        .item .item-img {
+            height: 15rem;
+            width: 15rem;
+        }
+        
+        .item-img img {
+            height: 15rem;
+            width: 15rem;
+            background-size: cover;
+        }
+        
+        .item-contact img {
+            height: 2rem;
+            width: 2rem;
+            transition: all 0.2s;
+        }
+        
+        .item-img img:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0.801));
+            transform: scale(1.02);
+            filter: contrast(0.8);
+        }
+        
+        .item-name {
+            font-size: 1.3rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            color: #edf0f1;
+        }
+        
+        .item-name:hover {
+            text-decoration: underline;
+        }
+        
+        .item-condition span {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 0.6rem;
+            color: #edf0f1;
+            background-color: rgba(0, 135, 169, 0.568);
+            border-radius: 20px;
+            padding: 3px;
+        }
+        
+        .item-brand {
+            color: #edf0f1;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            padding: 4px;
+        }
+        
+        .item-postdate {
+            color: #cccccc;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 0.65rem;
+            padding: 1rem 0rem;
+        }
+        
+        .item-price {
+            color: rgba(0, 136, 169, 1);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding-top: 1.5rem;
+        }
+        
+        .item-price:hover {
+            transform: skew(1.5deg, 1.5deg);
+        }
+        
+        .item-contact {
+            flex-basis: 10rem;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 3rem;
+            gap: 20px;
+        }
+        
+        .item-contact div img:hover {
+            transform: scale(1.025);
+            transform: translate(1.2px, -1.3px);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-box">
+            <img src="res/images/logo2.png" alt="Werae Logo" class="logo">
+        </div>
+
+        <div>
+            <ul class="navlinks">
+                <li><a href="blog.html" class="navs">BLOG</a></li>
+                <li><a href="forum.html" class="navs">FORUM</a></li>
+                <li><a href="#" class="navs">VITAL</a></li>
+                <li><a href="#" class="navs">BUY AND SELL</a></li>
+            </ul>
+
+        </div>
+        <a class="signup " href="#"><button class="btn-signin">SIGN IN</button></a>
+    </header>
+
+    <div class="bs-body">
+
+        <div class="bs-sidebar">
+            <div class="bs-logodiv">
+                <div class="bs-sidebar-logoname"><span> Werae shop</span></div>
+                <div class="bs-sidebar-logo"><img src="res/shopingcart.png" alt="cart"></div>
+
+            </div>
+            <div class="bs-sidebar-navs">
+                <ul class="bs-main-nav">
+                    <li class="nav-sortby"> <span> Sort buy</span></li>
+                    <li><select>
+                        <option value=""></option>
+                        <option value="none">Latest</option>
+                        <option value="none">Relevance</option>
+                    </select></li>
+                    <li class="nav-cat"><span>Categories</span>
+                        <ul class="catlist">
+                            <li>Electronics</li>
+                            <li>Fashion and Beauty</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bs-topbar">
+            <div class="bs-searchbar"><input type="text" name="searchbar" placeholder="I am looking for.."></div>
+            <div class="bs-search-icon"> <button>Search</button></div>
+        </div>
+
+    </div>
+    <div class="bs-content">
+
+        <div class="item">
+
+            <div class="item-img"><img src="res/howard-bouchevereau-RSCirJ70NDM-unsplash.jpg" alt=""></div>
+            <div class="item-info">
+                <div class="item-name"><span> Mac Book air </span></div>
+                <div class="item-condition"> <span>Slightly used</span></div>
+                <div class="item-brand"><span> Apple </span></div>
+                <div class="item-postdate"><span> jan 29/2021 8:30pm </span></div>
+                <div class="item-price"> ETB 25,000 </div>
+                <div class="hashtag"><span>#Electronics</span></div>
+
+            </div>
+            <div class="item-contact">
+                <div>
+                    <img src="res/phone-call.png" alt="">
+                </div>
+                <div>
+                    <img src="res/telegram2.png" alt=""></div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="bs-content">
+
+        <div class="item">
+
+            <div class="item-img"><img src="res/anh-nhat-PdALQmfEqvE-unsplash.jpg" alt=""></div>
+            <div class="item-info">
+                <div class="item-name"><span> Samsung Galaxy S21 5G </span></div>
+                <div class="item-condition"> <span>New</span></div>
+                <div class="item-brand"><span> Samsung </span></div>
+                <div class="item-postdate"><span> jan 29/2021 8:30pm </span></div>
+                <div class="item-price"> ETB 11,000 </div>
+                <div class="hashtag"><span>#Electronics</span></div>
+
+            </div>
+            <div class="item-contact">
+                <div>
+                    <img src="res/phone-call.png" alt="">
+                </div>
+                <div>
+                    <img src="res/telegram2.png" alt=""></div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="bs-content">
+
+        <div class="item">
+
+            <div class="item-img"><img src="res/howard-bouchevereau-RSCirJ70NDM-unsplash.jpg" alt=""></div>
+            <div class="item-info">
+                <div class="item-name"><span> Mac Book air </span></div>
+                <div class="item-condition"> <span>Slightly used</span></div>
+                <div class="item-brand"><span> Apple </span></div>
+                <div class="item-postdate"><span> jan 29/2021 8:30pm </span></div>
+                <div class="item-price"> ETB 25,000 </div>
+                <div class="hashtag"><span>#Electronics</span></div>
+
+            </div>
+            <div class="item-contact">
+                <div>
+                    <img src="res/phone-call.png" alt="">
+                </div>
+                <div>
+                    <img src="res/telegram2.png" alt=""></div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="bs-content">
+
+        <div class="item">
+
+            <div class="item-img"><img src="res/howard-bouchevereau-RSCirJ70NDM-unsplash.jpg" alt=""></div>
+            <div class="item-info">
+                <div class="item-name"><span> Mac Book air </span></div>
+                <div class="item-condition"> <span>Slightly used</span></div>
+                <div class="item-brand"><span> Apple </span></div>
+                <div class="item-postdate"><span> jan 29/2021 8:30pm </span></div>
+                <div class="item-price"> ETB 25,000 </div>
+                <div class="hashtag"><span>#Electronics</span></div>
+
+            </div>
+            <div class="item-contact">
+                <div>
+                    <img src="res/phone-call.png" alt="">
+                </div>
+                <div>
+                    <img src="res/telegram2.png" alt=""></div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="bs-content">
+
+        <div class="item">
+
+            <div class="item-img"><img src="res/howard-bouchevereau-RSCirJ70NDM-unsplash.jpg" alt=""></div>
+            <div class="item-info">
+                <div class="item-name"><span> Mac Book air </span></div>
+                <div class="item-condition"> <span>Slightly used</span></div>
+                <div class="item-brand"><span> Apple </span></div>
+                <div class="item-postdate"><span> jan 29/2021 8:30pm </span></div>
+                <div class="item-price"> ETB 25,000 </div>
+                <div class="hashtag"><span>#Electronics</span></div>
+
+            </div>
+            <div class="item-contact">
+                <div>
+                    <img src="res/phone-call.png" alt="">
+                </div>
+                <div>
+                    <img src="res/telegram2.png" alt=""></div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
