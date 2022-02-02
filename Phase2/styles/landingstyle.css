@@ -17,7 +17,7 @@ body {
 /* end of header */
 
 .intro {
-    height: 80vh;
+    min-height: 80vh;
     background-color: #24252A;
     position: relative;
     display: flex;
@@ -79,6 +79,35 @@ body {
 .main-header span {
     display: block;
     text-align: center;
+}
+
+@media (max-width:700px) {
+    .main-header span {
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+    }
+    .intro {
+        height: fit-content;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .intro div {
+        flex-basis: 100%;
+    }
+    .header div {
+        flex-basis: 100%;
+    }
+    .features-box div {
+        flex-basis: 100%;
+    }
+    .quote {
+        text-align: center;
+    }
+    .quote p {
+        width: 100%;
+    }
 }
 
 .no1 {
@@ -222,6 +251,9 @@ body {
     font-size: 1.5rem;
     transition: all 1s ease;
     margin-bottom: 80px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
+    z-index: 4;
+    transition: all 0.1s;
 }
 
 .feature:hover {}
@@ -321,7 +353,7 @@ body {
 }
 
 .lp-content:hover {
-    transform: translateY(-20px);
+    /* transform: translateY(-20px); */
 }
 
 .lp-content ul {
@@ -402,4 +434,47 @@ body {
     background-size: cover;
     position: absolute;
     top: 0;
+}
+
+.btn-getstarted {
+    position: relative;
+}
+
+.btn-getstarted a {
+    text-decoration: none;
+}
+
+.btn-getstarted a button {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    background: linear-gradient(to right, rgb(166, 2, 172), #007bff);
+    border-radius: 20px;
+    border: none;
+    margin: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 0px 15px;
+    border: 3px solid #24252A;
+    transition: transform 1s;
+}
+
+.btn-getstarted a button span {
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.btn-getstarted a button img {
+    width: 15px;
+    height: 15px;
+    /* border: 1px solid red; */
+    margin-left: 5px;
+    transition: all 1s;
+}
+
+.btn-getstarted a button:hover {
+    transform: scale(1.08);
+}
+
+.btn-getstarted a button:hover img {
+    transform: translateX(7px);
 }

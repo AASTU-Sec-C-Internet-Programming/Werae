@@ -29,7 +29,7 @@
             </ul>
 
         </div>
-        <a class="signup " href="#"><button class="btn-signin">SIGN IN</button></a>
+        <a class="signup " href="signin.html"><button class="btn-signin">SIGN IN</button></a>
     </header>
     <div class="intro">
         <div class="moto">
@@ -128,6 +128,10 @@
 
         </div>
 
+        <div class="btn-getstarted">
+            <a href="blog.html"><button><span> Get Started </span><img src="res/next.png" alt="next"></button></a>
+        </div>
+
 
     </div>
     <footer class="v-footer">
@@ -188,10 +192,19 @@
         <p class="copyright">Werae &copy; 2022 - All Right Reserved</p>
 
     </footer>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script>
-        src = "scroll.js"
-    </script>
+        VanillaTilt.init(document.querySelector(".feature"), {
+            max: 15,
+            speed: 400,
+            scale: 1,
+            glare: true,
+            "max-glare": 1
+        });
 
+        //It also supports NodeList
+        VanillaTilt.init(document.querySelectorAll(".feature"));
+    </script>
 </body>
 
 
