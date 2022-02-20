@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/header copy.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/forum.css">
+    <script src="../js/header.js"></script>
+    <script src="../js/forum.js"></script>
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="menu-icon">
+            <img src="../views/res/close.png" alt="close button" class="menu-btn" id="close" onclick="hide('navlink')">
+            <img src="../views/res/menu (1)-modified.png" alt="menu button" class="menu-btn" onclick="show('navlink')" id="menu">
+        </div>
+        <div class="logo-box">
+            <img src="res/images/logo2.png" alt="Werae Logo" class="logo">
+        </div>
+
+        <div>
+            <ul class="navlinks" id="navlink">
+                <li><a href="blog.html" class="navs">BLOG <div class="nav-underline"><span></span></div></a></li>
+                <li><a href="forum.html" class="navs">FORUM<div class="nav-underline"><span></span></div></a></li>
+                <li><a href="vital.html" class="navs">VITAL<div class="nav-underline"><span></span></div></a></li>
+                <li><a href="Buy and sell.html" class="navs">BUY AND SELL<div class="nav-underline"><span></span></div></a></li>
+                <li><a href="landingpage.html" class="navs">SERVICES<div class="nav-underline"><span></span></div></a></li>
+            </ul>
+
+        </div>
+        <a class="signup " href="signin.html"><button class="btn-signin">SIGN IN</button></a>
+    </header>
+    <div class="header2">
+        <ul class="qa-nav">
+
+            <li class="searchbar"><input type="text" placeholder="search Werae">
+                <div class="search-div">
+                    <img src="res/search.png" alt="" class="search-icon">
+                </div>
+            </li>
+            <li><button class="btn-addq"><a href="#" class="except"  onclick="divshow()"> Add Question</a></button></li>
+            <li class="qa-account">
+                <a href=""> <img src="res/account.png" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <!-- <ul>
+                <li>Academic</li>
+                <li>Administrator</li>
+
+            </ul> -->
+        </div>
+        <div class="qa-section" id="qa-container">
+            <!-- <div class="question">
+                <h4>Questions for you</h4>
+            </div> -->
+            <div class="question" id="firstQuestion">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Aben Tefera </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>5rd Year Environmental Engineering </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="question-div" id="div2">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content" id="getback">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+                        <p id="p1" style="margin:40px 0px;background-color: rgba(165, 165, 165, 0.537);height: fit-content;width: 50%;display: flex;flex-basis: 400px;flex-wrap: ;">
+
+                        </p>
+
+
+
+
+                        <div class="ans-btn"><a class="trigger_popup_fricc"><button onclick="divShow('p1')">Answer</button></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Aben Tefera </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>5rd Year Environmental Engineering </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content" id="getback">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+
+
+
+
+                        <div class="ans-btn"><a class="trigger_popup_fricc"><button>Answer</button></a></div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <!-- <div class="question">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Aben Tefera </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>5rd Year Environmental Engineering </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content" id="getback">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+
+
+
+
+                        <div class="ans-btn"><a class="trigger_popup_fricc"><button>Answer</button></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Aben Tefera </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>5rd Year Environmental Engineering </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content" id="getback">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+
+
+
+
+                        <div class="ans-btn"><a class="trigger_popup_fricc"><button>Answer</button></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Aben Tefera </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>5rd Year Environmental Engineering </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content" id="getback">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+
+
+
+
+                        <div class="ans-btn"><a class="trigger_popup_fricc"><button>Answer</button></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="account-div">
+                    <div class="profile-picture"> <img class=".avatar" src="res/account.png" alt="Profile"> </div>
+                    <div class="account-info">
+
+                        <div class="account-name">
+                            <p> Aben Tefera </p>
+                        </div>
+
+                        <div class="self-desc">
+                            <p>5rd Year Environmental Engineering </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="question-div">
+                    <div class="question-title">
+                        <p>Can I add classes after add drop?</p>
+                    </div>
+                    <div class="question-content" id="getback">
+                        <p>I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after add and drop case day I have been wondering if it is possible to add classes after
+                            add and drop case day
+                        </p>
+
+
+
+
+                        <div class="ans-btn"><a class="trigger_popup_fricc"><button>Answer</button></a></div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+    <footer class="v-footer">
+        <div class="footer-row">
+            <div class="footer-col about">
+                <h3>About us
+                    <div class="underline"><span></span></div>
+                </h3>
+                <p> we provide information regarding our Campus Addis Ababa Science and Technology University
+                </p>
+
+            </div>
+
+            <div class="footer-col info">
+                <h3>Information
+                    <div class="underline"><span></span></div>
+                </h3>
+                <ul>
+                    <li><a href=""> About us </a></li>
+                    <li><a href=""> Blog</a></li>
+                    <li><a href=""> Events</a></li>
+                    <li><a href=""> Shop</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col help">
+                <h3>Helpfull Links
+                    <div class="underline"><span></span></div>
+                </h3>
+                <ul>
+                    <li><a href="#"> Services</a> </li>
+                    <li><a href=""> Student info</a></li>
+                    <li><a href=""> Terms and Conditions</a></li>
+                    <li><a href=""> Privacy Policy </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col sub">
+                <h3>Subscribe
+                    <div class="underline"><span></span></div>
+                </h3>
+                <form>
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit"><img src="res/arrow-right-solid.svg" alt="Send"></button>
+                </form>
+                <div class="social-icons">
+                    <div> <img src="res/social/facebook-app-symbol.png" alt="fb"></div>
+                    <div><img src="res/social/twitter.png" alt="fb"></div>
+                    <div><img src="res/social/linkedin.png" alt="fb"></div>
+                    <div><img src="res/social/telegram (2).png" alt="fb"></div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+        <p class="copyright">Werae &copy; 2022 - All Right Reserved</p>
+
+    </footer>
+
+    <div class="popup-container" id="add-answer-popup">
+        <div class="popup-add-div">
+            <!-- first row -->
+            <div class="popup-add-btn-close"><button id="closebtn" onclick="divhide()"><img src="res/Popup/close.png" alt=""></button></div>
+            <!-- second row -->
+            <span class="popup-add-header"> Add Question </span>
+            <!-- third row -->
+            <div class="popup-add-tips">
+                <h4>Tips on getting good answers quickly</h4>
+                <ul>
+                    <li>Make sure your question has not been asked already</li>
+                    <li>Keep your question short and to the point</li>
+                    <li>Double-check grammar and spelling</li>
+                </ul>
+            </div>
+            <!-- 4th row -->
+
+            <div class="question-title">
+                <span>Title</span><input type="text" id="titleT">
+            </div>
+
+            <div class="popup-add-type">
+                <span>Type</span>
+                <input type="text" id="type" placeholder="type" required>
+
+
+            </div>
+
+            <div class="popup-question-input-div">
+                <span>Description</span>
+                <input type="text" id="input-question-add" placeholder="Add your question here..." required>
+            </div>
+            <div class="add-btn-add-question">
+                <button onclick="addquestion()">Add Question</button>
+            </div>
+        </div>
+    </div>
+    <div class="popup-container" id="add-answer-popup2">
+        <div class="popup-add-div">
+            <!-- first row -->
+            <div class="popup-add-btn-close"><button id="closebtn" onclick="divHide()"><img src="res/Popup/close.png" alt=""></button></div>
+            <!-- second row -->
+            <span class="popup-add-header"> Answer </span>
+            <!-- third row -->
+            <div class="popup-add-tips">
+                <h4>Tips on Writing good answers</h4>
+                <ul>
+                    <li>Double-check grammar and spelling</li>
+                </ul>
+            </div>
+            <!-- 4th row -->
+
+            <div class="popup-question-input-div">
+                <span>Answer</span>
+                <input type="text" id="input-answer-add" placeholder="Add your Answer here..." required>
+            </div>
+            <div class="add-btn-add-question">
+                <button onclick="addanswer()"> Answer</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
