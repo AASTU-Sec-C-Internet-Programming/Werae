@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/signin.css">
+    <title>Document</title>
+</head>
+
+<body .signin-body>
+    <div class="signup-logo"><img src="res/images/logo2.png" alt="Werae logo"></div>
+
+    <form action="landingpage.html" class="signup-container" id="form">
+
+        <div class="signup-email"><img src="res/signup-images/email.png" alt="pass">
+            <input type="email" placeholder="Email" id="email" required></div>
+        <div class="signup-password"><img src="res/signup-images/padlock.png" alt="pass">
+            <input type="password" placeholder="Password" id="password" required>
+        </div>
+
+        <div class=" btn-signin-signup signup-login">
+            <button class=".signup-btn-register">Sign In</button>
+            <a href="signup.html"> <button class=".signup-btn-register">Sign Up</button></a>
+        </div>
+        <div id="error">
+
+        </div>
+    </form>
+
+    <script>
+        var error = document.getElementById("error");
+        var form = document.getElementById("form");
+        var password = document.getElementById("password");
+        var email = document.getElementById("email");
+
+
+        form.addEventListener('submit', (e) => {
+            if (email.value == '') {
+                error.innerHTML = "Email Field can't be empty";
+            } else {
+                if (password.value == '') {
+                    error.innerHTML = "Password field can't empty."
+                } else {
+
+
+                    opener.location = 'https://www.plus2net.com/html_tutorial/button-linking.php'
+                }
+            }
+
+
+            e.preventDefault();
+
+        })
+    </script>
+</body>
+
+</html>

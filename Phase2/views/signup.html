@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <script defer src="../js/form.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="signup-logo"><img src="res/images/logo2.png" alt="Werae logo"></div>
+    <form id="form" action="landingpage.html" class="signup-container">
+
+        <div class="signup-email"><img src="res/signup-images/message.png" alt="pass">
+            <input type="email" id="email" placeholder="Email"></div>
+        <div class="signup-password"><img src="res/signup-images/padlock.png" alt="pass">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+        <div class="signup-retype-password">
+            <img src="res/signup-images/padlock.png" alt="pass">
+            <input type="password" id="password2" placeholder="Re-type Password" required>
+        </div>
+        <div class="signup-name">
+            <div class="first-name">
+                <img src="res/signup-images/account.png" alt="pass">
+                <input type="text" id="first-name" placeholder="First Name" required>
+            </div>
+            <div class="last-name">
+                <img src="res/signup-images/account.png" alt="pass">
+                <input type="text" id="last-name" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div class="signup-name">
+            <div class="first-name">
+                <img src="res/signup-images/department.png" alt="pass">
+                <select name="department" id="department" required>
+                    <option value="Null" >
+                       Department
+                    </option>
+                    <option value="ME-E">
+                      College of Mechanical and Electrical Engineering - Electrical
+                      Engineering
+                    </option>
+                    <option value="ME-M">
+                      College of Mechanical and Electrical Engineering - Mechanical
+                      Engineering
+                    </option>
+                    <option value="ME-S">
+                      College of Mechanical and Electrical Engineering - Software
+                      Engineering
+                    </option>
+                    <option value="AC-A">
+                      College of Architecture and Civil Engineering - Architecture
+                    </option>
+                    <option value="AC-C">
+                      College of Architecture and Civil Engineering - Civil Engineering
+                    </option>
+                  </select>
+            </div>
+            <div class="last-name">
+                <img src="res/signup-images/academic-calendar.png" alt="pass">
+                <select name="academic-year" id="academic-year" d>
+                    <option value="0" >
+                       Academic Year                    </option>
+                    <option value="1" >
+                        1 <sub>st</sub> Year
+                     </option>
+                    <option value="2">
+                      2   <sub>nd</sub> Year              </option>
+                    <option value="3">
+                      3 <sub>rd</sub> Year
+                    </option>
+                    <option value="4">
+                        4 <sub>th</sub> Year
+                      </option>
+                      <option value="5">
+                        5 <sub>th</sub> Year
+                      </option>
+                    
+                  </select>
+            </div>
+        </div>
+        <div class="signup-gender">
+            <div class="male">
+                <input type="radio" id="male" name="gender" value="male" checked>
+                <label for="male">Male</label>
+            </div>
+
+            <div class="female">
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+        <div class="signup-checkbox">
+            <div class="newsletter">
+                <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                <label for="newsletter">I want to recieve the newsletter</label>
+            </div>
+        </div>
+        <div id="error">
+
+        </div>
+        <div class="btn-signin-signup">
+            <button type="submit" class=".signup-btn-register">Register</button>
+        </div>
+    </form>
+</body>
+
+</html>
